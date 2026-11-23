@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WorldGauge Japan Sources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root {
+  --blue: #012169; --grid-minor: #16337A; --grid-major: #2A4A93;
+  --paper: #F7F6F2; --ink: #0A1A40; --tick: #8EA3C8; --ink-soft: #4A5A75; --rule: #D9DCE2;
+  --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  background-color: var(--blue);
+  background-image:
+    linear-gradient(var(--grid-major) 2px, transparent 2px), linear-gradient(90deg, var(--grid-major) 2px, transparent 2px),
+    linear-gradient(var(--grid-minor) 1px, transparent 1px), linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+  background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px;
+  color: var(--paper); font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+.wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 28px; }
+header { display: grid; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.disc { width: 48px; height: 48px; border-radius: 50%; background: var(--paper); color: var(--ink); display: grid; place-items: center;
+  font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: .5px; box-shadow: 0 4px 10px rgba(0,11,46,.45); }
+.brand span { font-family: var(--display); font-weight: 700; font-size: 26px; letter-spacing: .5px; }
+.ticks { height: 18px; background: repeating-linear-gradient(90deg, var(--tick) 0 2px, transparent 2px 13px); -webkit-mask: linear-gradient(#000 0 0) bottom/100% 9px no-repeat; mask: linear-gradient(#000 0 0) bottom/100% 9px no-repeat; max-width: 420px; opacity: .8; }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(40px, 7vw, 64px); line-height: 1; margin: 0; text-wrap: balance; }
+.lede { color: #D8DEE8; max-width: 62ch; margin: 0; }
+.sheet { background: var(--paper); color: var(--ink); padding: 28px clamp(18px, 4vw, 36px); box-shadow: 0 10px 22px rgba(0,11,46,.45);
+  clip-path: polygon(0 1%, 4% 0, 9% 1%, 15% 0, 22% .8%, 30% 0, 38% 1%, 47% .2%, 55% 1%, 63% 0, 71% .9%, 79% .1%, 87% 1%, 94% 0, 100% .8%,
+    100% 99%, 95% 100%, 88% 99.2%, 80% 100%, 72% 99%, 64% 100%, 56% 99.3%, 48% 100%, 40% 99%, 32% 100%, 24% 99.2%, 16% 100%, 8% 99%, 0 100%); }
+.sheet h2 { font-family: var(--display); font-weight: 700; font-size: 30px; margin: 0 0 4px; letter-spacing: .3px; }
+.sheet .sub { color: var(--ink-soft); margin: 0 0 18px; font-size: 14px; }
+h3 { font-family: var(--display); font-weight: 600; font-size: 20px; letter-spacing: .4px; text-transform: uppercase; margin: 22px 0 8px; color: var(--ink); }
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 600px; }
+th { text-align: left; font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); padding: 8px 10px 8px 0; border-bottom: 2px solid var(--ink); }
+td { padding: 9px 10px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.v { font-family: var(--mono); white-space: nowrap; font-variant-numeric: tabular-nums; }
+td.d { white-space: nowrap; }
+td a { color: var(--ink); font-size: 13px; word-break: break-word; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.note { font-size: 14px; color: var(--ink-soft); margin: 14px 0 0; }
+footer { color: #C9D2E0; font-size: 14px; display: grid; gap: 8px; max-width: 68ch; }
+footer strong { color: var(--paper); }
+</style></head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="disc" aria-hidden="true">WG</div><span>WorldGauge</span></div>
+    <div class="ticks" aria-hidden="true"></div>
+    <h1>Why Japan Pays More to Borrow as It Shrinks</h1>
+    <p class="lede">Every figure in the video comes from the primary sources below, with the date it refers to. Dollar amounts use the Federal Reserve's rate of 159.93 yen per dollar on 13 Nov 2026. Forecasts are labelled as forecasts. Our opinion appears only after "Our read" in the video.</p>
+  </header>
+
+  <section class="sheet" aria-labelledby="h-home">
+    <h2 id="h-home">Households and prices</h2>
+    <p class="sub">Japan's own statistics. "Real" means after prices.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Figure</th><th>Value</th><th>As of</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Household consumption spending, two-or-more-person households, real change on a year earlier</td><td class="v">¥289,536 (~$1,810) · −6.8%</td><td class="d">Sep 2026</td><td><a href="https://www.stat.go.jp/english/data/kakei/156.html">Statistics Bureau, Family Income and Expenditure Survey</a></td></tr>
+        <tr><td>Workers' household income, real change</td><td class="v">¥528,074 (~$3,300) · +0.9%</td><td class="d">Sep 2026</td><td><a href="https://www.stat.go.jp/english/data/kakei/156.html">Statistics Bureau</a></td></tr>
+        <tr><td>Wages and salaries, workers' households, real change</td><td class="v">+2.0%</td><td class="d">Sep 2026</td><td><a href="https://www.stat.go.jp/data/kakei/sokuhou/tsuki/zuhyou/fies_t2.xlsx">Statistics Bureau, Table 2</a></td></tr>
+        <tr><td>Food spending per household, real change</td><td class="v">¥93,350 (~$584) · −2.5%</td><td class="d">Sep 2026</td><td><a href="https://www.stat.go.jp/data/kakei/sokuhou/tsuki/zuhyou/fies_t2.xlsx">Statistics Bureau, Table 2</a></td></tr>
+        <tr><td>Rice spending per household, real change</td><td class="v">¥3,039 · −23.7%</td><td class="d">Sep 2026</td><td><a href="https://www.stat.go.jp/data/kakei/sokuhou/tsuki/zuhyou/fies_t2.xlsx">Statistics Bureau, Table 2</a></td></tr>
+        <tr><td>Electricity spending per household, real change</td><td class="v">¥11,886 (~$74) · −11.9%</td><td class="d">Sep 2026</td><td><a href="https://www.stat.go.jp/data/kakei/sokuhou/tsuki/zuhyou/fies_t2.xlsx">Statistics Bureau, Table 2</a></td></tr>
+        <tr><td>Consumer prices, all items · excluding fresh food, on a year earlier</td><td class="v">+2.3% · +2.2%</td><td class="d">Oct 2026</td><td><a href="https://www.stat.go.jp/data/cpi/sokuhou/tsuki/pdf/zenkoku.pdf">Statistics Bureau, national CPI (Japanese)</a></td></tr>
+        <tr><td>Food excluding fresh food (September in brackets)</td><td class="v">+2.2% (+2.9%)</td><td class="d">Oct 2026</td><td><a href="https://www.stat.go.jp/data/cpi/sokuhou/tsuki/pdf/zenkoku.pdf">Statistics Bureau</a></td></tr>
+        <tr><td>Fresh vegetables · lettuce · rice (excluding Koshihikari), on a year earlier</td><td class="v">+8.1% · +95.6% · −29.8%</td><td class="d">Oct 2026</td><td><a href="https://www.stat.go.jp/data/cpi/sokuhou/tsuki/pdf/zenkoku.pdf">Statistics Bureau</a></td></tr>
+        <tr><td>Energy, on a year earlier (September in brackets) · electricity, on the month · city gas, on the month</td><td class="v">+2.2% (−0.6%) · +5.0% · +5.5%</td><td class="d">Oct 2026</td><td><a href="https://www.stat.go.jp/data/cpi/sokuhou/tsuki/pdf/zenkoku.pdf">Statistics Bureau</a></td></tr>
+        <tr><td>Summer electricity and gas bill help, paid from a reserve fund</td><td class="v">Jul–Sep 2026</td><td class="d">3 Jun 2026</td><td><a href="https://www.mof.go.jp/english/public_relations/statement/fiscal_policy_speech/20260603.html">Ministry of Finance, fiscal policy speech</a></td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-econ">
+    <h2 id="h-econ">Growth, the yen and the central bank</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Figure</th><th>Value</th><th>As of</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Real GDP, first preliminary estimate (first fall in four quarters)</td><td class="v">−0.0% q/q · −0.1% annualised</td><td class="d">Jul–Sep 2026</td><td><a href="https://www5.cao.go.jp/keizai1/danwa/261116_statement.pdf">Cabinet Office, minister's statement, 16 Nov 2026</a></td></tr>
+        <tr><td>Private non-residential investment · private consumption</td><td class="v">+1.6% q/q · fell a second quarter</td><td class="d">Jul–Sep 2026</td><td><a href="https://www5.cao.go.jp/keizai1/danwa/261116_statement.pdf">Cabinet Office</a></td></tr>
+        <tr><td>Yen per US dollar (2026 range: 152.64 on 12 Feb to 163.86 on 29 Jul)</td><td class="v">159.93</td><td class="d">13 Nov 2026</td><td><a href="https://fred.stlouisfed.org/series/DEXJPUS">Federal Reserve H.10, via FRED</a></td></tr>
+        <tr><td>Bank of Japan policy rate: raised (vote 7–2)</td><td class="v">~1.25%</td><td class="d">18 Sep 2026</td><td><a href="https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k260918a.pdf">Bank of Japan</a></td></tr>
+        <tr><td>Held (vote 8–1; one member proposed 1.5%)</td><td class="v">~1.25%</td><td class="d">30 Oct 2026</td><td><a href="https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030a.pdf">Bank of Japan</a></td></tr>
+        <tr><td>Bank of Japan ETF sales pace from January 2027 (book value, a year)</td><td class="v">~¥860bn (from ~¥330bn)</td><td class="d">30 Oct 2026</td><td><a href="https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030a.pdf">Bank of Japan</a></td></tr>
+        <tr><td>Board forecast, fiscal 2026 (forecast): CPI excluding fresh food · real GDP</td><td class="v">2.5% · 0.7%</td><td class="d">30 Oct 2026</td><td><a href="https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030b.pdf">Bank of Japan, Outlook Report</a></td></tr>
+        <tr><td>Japanese government bond yields: 2-year · 10-year · 30-year</td><td class="v">1.853% · 2.870% · 4.030%</td><td class="d">19 Nov 2026</td><td><a href="https://www.mof.go.jp/english/policy/jgbs/reference/interest_rate/jgbcme.csv">Ministry of Finance, JGB yields</a></td></tr>
+        <tr><td>10-year yield, monthly average: August · October</td><td class="v">2.94% · 2.755%</td><td class="d">Oct 2026</td><td><a href="https://fred.stlouisfed.org/series/IRLTLT01JPM156N">OECD, via FRED</a></td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-fisc">
+    <h2 id="h-fisc">Public finances</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Figure</th><th>Value</th><th>As of</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Debt service (interest and repayments), initial budget</td><td class="v">¥31.28tn (~$196bn)</td><td class="d">FY2026</td><td><a href="https://www.mof.go.jp/english/policy/budget/budget/fy2026/02.pdf">Ministry of Finance, budget outline</a></td></tr>
+        <tr><td>Initial general-account budget · debt service share (WorldGauge calculation)</td><td class="v">¥122.3tn · ~25.6%</td><td class="d">FY2026</td><td><a href="https://www.mof.go.jp/english/policy/budget/budget/fy2026/02.pdf">Ministry of Finance</a></td></tr>
+        <tr><td>"Japan has the highest level debt-to-GDP ratio in the world"; the rate-below-growth assumption is "uncertain"</td><td class="v">quote</td><td class="d">FY2026</td><td><a href="https://www.mof.go.jp/english/policy/budget/budget/fy2026/02.pdf">Ministry of Finance, budget outline, section 16</a></td></tr>
+        <tr><td>Supplementary budget · of which Middle East reserve fund · financed by deficit-financing bonds</td><td class="v">~¥3.11tn · ¥2.5tn</td><td class="d">3 Jun 2026</td><td><a href="https://www.mof.go.jp/english/public_relations/statement/fiscal_policy_speech/20260603.html">Ministry of Finance, fiscal policy speech</a></td></tr>
+        <tr><td>Food consumption tax cut, 8% to 1%, 1 Apr 2027 to 31 Mar 2029, plus a support payment for working households; passed the House of Representatives; House of Councillors in committee</td><td class="v">Bill No. 1 (222nd Diet)</td><td class="d">6 Nov 2026</td><td><a href="https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DE342E.htm">House of Representatives, bill record</a></td></tr>
+        <tr><td>IMF staff: gross debt "the highest among major economies"; advised against cutting the consumption tax</td><td class="v">view</td><td class="d">17 Feb 2026</td><td><a href="https://www.imf.org/en/News/articles/2026/02/13/imf-cs-02172026-japan-staff-concluding-statement-of-the-2026-article-iv-mission">IMF, 2026 Article IV concluding statement</a></td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-us">
+    <h2 id="h-us">The American link</h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Figure</th><th>Value</th><th>As of</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Japan's holdings of US Treasury securities (largest foreign holder)</td><td class="v">$1,063.1bn</td><td class="d">Sep 2026</td><td><a href="https://ticdata.treasury.gov/resource-center/data-chart-center/tic/Documents/slt_table5.txt">US Treasury, TIC Table 5</a></td></tr>
+        <tr><td>Peak this year · change to September (WorldGauge calculation)</td><td class="v">$1,239.3bn · −14.2%</td><td class="d">Feb → Sep 2026</td><td><a href="https://ticdata.treasury.gov/resource-center/data-chart-center/tic/Documents/slt_table5.txt">US Treasury, TIC Table 5</a></td></tr>
+        <tr><td>US 30-year mortgage rate minus 10-year Treasury yield, average gap over 107 weeks (WorldGauge calculation)</td><td class="v">2.18 points</td><td class="d">Nov 2024 – Nov 2026</td><td><a href="https://fred.stlouisfed.org/series/MORTGAGE30US">Freddie Mac PMMS</a> · <a href="https://fred.stlouisfed.org/series/DGS10">Federal Reserve H.15</a>, via FRED</td></tr>
+      </tbody></table></div>
+    <p class="note">The US Treasury notes that country figures may be imprecise because securities held in overseas custody may not be attributed to the actual owners.</p>
+  </section>
+
+  <section class="sheet" aria-labelledby="h-media">
+    <h2 id="h-media">Footage, music and photos</h2>
+    <p class="sub">Footage and music: Storyblocks (subscription licence). Photo credits are shown on screen and listed in the rights log.</p>
+  </section>
+
+  <footer>
+    <p><strong>Not financial advice.</strong> WorldGauge is for information and education only. Nothing here is a recommendation to buy, sell or hold anything.</p>
+    <p>Original research and analysis by WorldGauge · charts built in-house from primary data · narration voice by ElevenLabs · footage and music from Storyblocks. Every figure is checked against its source.</p>
+    <p><strong>Corrections:</strong> if we got something wrong, we say so in a pinned comment on the video and log it here.</p>
+  </footer>
+</div>
+</body></html>
