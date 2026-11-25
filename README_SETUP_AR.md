@@ -6,6 +6,7 @@
 4. Settings → Pages: تأكد أن Source = Deploy from a branch، الفرع main، المجلد / (root).
 5. بعد دقيقة أو دقيقتين تفتح الروابط:
    - الصفحة الرئيسية: https://theworldgauge.github.io/
+   - الجمعة السوداء: https://theworldgauge.github.io/sources/ep005/
    - اليابان: https://theworldgauge.github.io/sources/ep004/
 6. بدّل رابط المصادر في وصف كل فيديو من YouTube Studio بالرابط الجديد.
 
